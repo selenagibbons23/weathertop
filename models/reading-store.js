@@ -40,13 +40,20 @@ export const readingStore = {
     await db.write();
   },
 
-  async updateReading(readingId, updatedReading) {
+ /*async updateReading(readingId, updatedReading) {
     const reading = await this.getReadingById(readingId);
     reading.code = updatedReading.code;
     reading.temp = updatedReading.temp;
     reading.windSpeed = updatedReading.windSpeed;
     reading.windDirection = updatedReading.windDirection;
     reading.pressure = updatedReading.pressure;
+    reading.fahrenheit = updatedReading.fahrenheit;
+    reading.weatherCondition=updatedReading.weatherCondition;
+    reading.weatherIcon=updatedReading.weatherIcon;
+    reading.beaufortScale=updatedReading.beaufortScale;
+    reading.windDirectionCalculation=updatedReading.WindDirectionCalculation;
+    
     await db.write();
-  },
+  },*/
+  
 };

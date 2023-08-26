@@ -14,7 +14,7 @@ export const readingController = {
     response.render("reading-view", viewData);
   },
 
- /* async update(request, response) {
+  async update(request, response) {
     const stationId = request.params.stationid;
     const readingId = request.params.readingid;
     const updatedReading = {
@@ -29,5 +29,5 @@ export const readingController = {
     const reading = await readingStore.getReadingById(trackId);
     await readingStore.updateReading(reading, updatedReading);
     response.redirect("/station/" + stationId);
-  }, */
+  }, 
 }; 
