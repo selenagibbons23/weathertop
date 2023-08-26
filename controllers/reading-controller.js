@@ -1,7 +1,7 @@
 import { stationStore } from "../models/station-store.js";
 import { readingStore } from "../models/reading-store.js";
 
-export const trackController = {
+export const readingController = {
   async index(request, response) {
     const stationId = request.params.stationid;
     const readingId = request.params.readingid;
@@ -14,7 +14,7 @@ export const trackController = {
     response.render("reading-view", viewData);
   },
 
-  async update(request, response) {
+  /*async update(request, response) {
     const stationId = request.params.stationid;
     const readingId = request.params.readingid;
     const updatedReading = {
@@ -24,9 +24,10 @@ export const trackController = {
     reading.windDirection = updatedReading.windDirection;
     reading.pressure = updatedReading.pressure;
     };
+
     console.log(`Updating Reading ${readingId} from Station ${stationId}`);
     const reading = await readingStore.getReadingById(trackId);
     await readingStore.updateReading(reading, updatedReading);
     response.redirect("/station/" + stationId);
-  },
-};
+  }, */
+}; 

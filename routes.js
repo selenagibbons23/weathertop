@@ -1,8 +1,8 @@
 import express from "express";
 import { accountsController } from "./controllers/accounts-controller.js";
 import { dashboardController } from "./controllers/dashboard-controller.js";
-import { playlistController } from "./controllers/station-controller.js";
-import { trackController } from "./controllers/reading-controller.js";
+import { stationController } from "./controllers/station-controller.js";
+import { readingController } from "./controllers/reading-controller.js";
 import { aboutController } from "./controllers/about-controller.js";
 
 export const router = express.Router();
@@ -22,7 +22,7 @@ router.get("/station/:id", stationController.index);
 router.post("/station/:id/addreading", stationController.addReading);
 router.get("/station/:stationid/deletereading/:readingid", stationController.deleteReading);
 router.get("/station/:stationid/editreading/:readingid", readingController.index);
-router.post("/playlist/:playlistid/updatetrack/:trackid", readingController.update);
+//router.post("/station/:stationid/updatereading/:readingid", readingController.update);
 
 router.get("/about", aboutController.index);
 router.get("/logout", accountsController.logout);
