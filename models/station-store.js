@@ -1,44 +1,44 @@
 import { v4 } from "uuid";
 import { initStore } from "../utils/store-utils.js";
-import { trackStore } from "./track-store.js";
+import { trackStore } from "./reading-store.js";
 
-const db = initStore("playlists");
+const db = initStore("stations");
 
-export const playlistStore = {
-  async getAllPlaylists() {
+export const stationStore = {
+  async getAllStations() {
     await db.read();
-    return db.data.playlists;
+    return db.data.stations;
   },
 
-  async addPlaylist(playlist) {
+  async addStation(station) {
     await db.read();
-    playlist._id = v4();
-    db.data.playlists.push(playlist);
+    station._id = v4();
+    db.data.stations.push(station);
     await db.write();
-    return playlist;
+    return station;
   },
 
-  async getPlaylistById(id) {
+  async getStationById(id) {
     await db.read();
-    const list = db.data.playlists.find((playlist) => playlist._id === id);
-    list.tracks = await trackStore.getTracksByPlaylistId(list._id);
+    const list = db.data.stations.find((station) => station._id === id);
+    list.readings = await readingStore.getReadingsByStationId(list._id);
     return list;
   },
 
-  async getPlaylistsByUserId(userid) {
+  async getStationsByUserId(userid) {
     await db.read();
-    return db.data.playlists.filter((playlist) => playlist.userid === userid);
+    return db.data.stations.filter((station) => station.userid === userid);
   },
 
-  async deletePlaylistById(id) {
+  async deleteStationById(id) {
     await db.read();
-    const index = db.data.playlists.findIndex((playlist) => playlist._id === id);
-    db.data.playlists.splice(index, 1);
+    const index = db.data.stations.findIndex((station) => station._id === id);
+    db.data.stations.splice(index, 1);
     await db.write();
   },
 
-  async deleteAllPlaylists() {
-    db.data.playlists = [];
+  async deleteAllStations() {
+    db.data.stations = [];
     await db.write();
   },
 };
