@@ -15,6 +15,7 @@ export const readingController = {
   },
 
   async update(request, response) {
+    const reading = await this.getReadingById(readingId);
     const stationId = request.params.stationid;
     const readingId = request.params.readingid;
     const updatedReading = {

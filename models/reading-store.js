@@ -40,7 +40,7 @@ export const readingStore = {
     await db.write();
   },
 
- /*async updateReading(readingId, updatedReading) {
+ async updateReading(readingId, updatedReading) {
     const reading = await this.getReadingById(readingId);
     reading.code = updatedReading.code;
     reading.temp = updatedReading.temp;
