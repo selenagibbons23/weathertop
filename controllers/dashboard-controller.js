@@ -5,7 +5,7 @@ export const dashboardController = {
   async index(request, response) {
     const loggedInUser = await accountsController.getLoggedInUser(request);
     const viewData = {
-      station: "Station Dashboard",
+      title: "Station Dashboard",
       stations: await stationStore.getStationsByUserId(loggedInUser._id),
     };
     console.log("dashboard rendering");
