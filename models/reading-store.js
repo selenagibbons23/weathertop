@@ -54,6 +54,6 @@ export const readingStore = {
     reading.windDirectionCalculation=updatedReading.WindDirectionCalculation;
     
     await db.write();
-  },*/
+  },
   
 };
