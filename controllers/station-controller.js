@@ -36,7 +36,7 @@ export const stationController = {
   },
   
   
-  
+  /*
   
   async updateReading(readingId, updatedReading) {
     const reading = await this.getReadingById(readingId);
@@ -52,6 +52,6 @@ export const stationController = {
     reading.windDirectionCalculation=updatedReading.WindDirectionCalculation;
     await db.write();
     
-    
+    */
   },
 };
