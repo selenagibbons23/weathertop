@@ -23,14 +23,14 @@ export const stationController = {
     };
     console.log(`adding track ${newReading.station}`);
     await readingStore.addReading(station._id, newReading);
-    response.redirect("/station/" + playlist._id);
+    response.redirect("/station/" + station._id);
   },
 
-  async deleteTrack(request, response) {
-    const playlistId = request.params.playlistid;
-    const trackId = request.params.trackid;
-    console.log(`Deleting Track ${trackId} from Playlist ${playlistId}`);
-    await trackStore.deleteTrack(request.params.trackId);
-    response.redirect("/playlist/" + playlistId);
+  async deleteReading(request, response) {
+    const stationId = request.params.stationid;
+    const readingId = request.params.readingid;
+    console.log(`Deleting Reading ${readingId} from Station ${stationId}`);
+    await readingStore.deleteReading(request.params.readingId);
+    response.redirect("/station/" + stationId);
   },
 };
