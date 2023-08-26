@@ -19,10 +19,10 @@ router.get("/dashboard", dashboardController.index);
 router.post("/dashboard/addstation", dashboardController.addStation);
 router.get("/dashboard/deletestation/:id", dashboardController.deleteStation);
 router.get("/station/:id", stationController.index);
-router.post("/station/:id/addreading", stationController.addTrack);
-router.get("/playlist/:playlistid/deletetrack/:trackid", playlistController.deleteTrack);
-router.get("/playlist/:playlistid/edittrack/:trackid", trackController.index);
-router.post("/playlist/:playlistid/updatetrack/:trackid", trackController.update);
+router.post("/station/:id/addreading", stationController.addReading);
+router.get("/station/:stationid/deletereading/:readingid", stationController.deleteReading);
+router.get("/station/:stationid/editreading/:readingid", readingController.index);
+router.post("/playlist/:playlistid/updatetrack/:trackid", readingController.update);
 
 router.get("/about", aboutController.index);
 router.get("/logout", accountsController.logout);
