@@ -1,1 +1,23 @@
-{"file":"./models/readings.json","readings":[]}
+{
+  "file": "./models/readings.json",
+  "readings": [
+    {
+      "code": null,
+      "temp": null,
+      "windSpeed": null,
+      "windDirection": null,
+      "pressure": null,
+      "_id": "cf3225fd-81b7-426a-9775-f41db2347b03",
+      "stationid": "2ca95f5a-1cd0-4cb1-943f-9b62cc27a75f"
+    },
+    {
+      "code": null,
+      "temp": null,
+      "windSpeed": null,
+      "windDirection": null,
+      "pressure": null,
+      "_id": "c4795f9d-5bed-4a84-a934-634584bd6eb4",
+      "stationid": "2ca95f5a-1cd0-4cb1-943f-9b62cc27a75f"
+    }
+  ]
+}
