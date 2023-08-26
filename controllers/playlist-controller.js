@@ -1,26 +1,29 @@
-import { playlistStore } from "../models/playlist-store.js";
-import { trackStore } from "../models/track-store.js";
+import { stationStore } from "../models/station-store.js";
+import { readingStore } from "../models/reading-store.js";
 
-export const playlistController = {
+export const stationController = {
   async index(request, response) {
-    const playlist = await playlistStore.getPlaylistById(request.params.id);
+    const station = await stationStore.getStationById(request.params.id);
     const viewData = {
-      title: "Playlist",
-      playlist: playlist,
+      station: "Station",
+      station: station,
     };
-    response.render("playlist-view", viewData);
+    response.render("station-view", viewData);
   },
 
-  async addTrack(request, response) {
-    const playlist = await playlistStore.getPlaylistById(request.params.id);
-    const newTrack = {
-      title: request.body.title,
-      artist: request.body.artist,
-      duration: Number(request.body.duration),
+  async addReading(request, response) {
+    const station = await stationStore.getStationById(request.params.id);
+    const newReading = {
+      code:Number(request.body.code),
+      temp:Number(request.body.temp),
+      windSpeed:Number(request.body.windSpeed),
+      windDirection:Number(request.body.windDirection),
+      pressure:Number(request.body.pressure),
+     
     };
-    console.log(`adding track ${newTrack.title}`);
-    await trackStore.addTrack(playlist._id, newTrack);
-    response.redirect("/playlist/" + playlist._id);
+    console.log(`adding track ${newReading.station}`);
+    await readingStore.addReading(station._id, newReading);
+    response.redirect("/station/" + playlist._id);
   },
 
   async deleteTrack(request, response) {
