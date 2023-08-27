@@ -21,7 +21,7 @@ export const stationController = {
       pressure:Number(request.body.pressure),
      
     };
-    console.log(`adding reading ${newReading.station}`);
+    console.log(`adding reading ${newReading.code}`);
     await readingStore.addReading(station._id, newReading);
     response.redirect("/station/" + station._id);
   },
@@ -33,4 +33,5 @@ export const stationController = {
     await readingStore.deleteReading(request.params.readingId);
     response.redirect("/station/" + stationId);
   },
+  
 };
