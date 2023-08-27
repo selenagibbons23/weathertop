@@ -1,23 +1,13 @@
 import { stationStore } from "../models/station-store.js";
 import { readingStore } from "../models/reading-store.js";
 import {conversions } from "../utils/conversions.js";
-import {stationAnalytics} from "../utils/station-analytics.js;"
 
 export const stationController = {
   async index(request, response) {
     const station = await stationStore.getStationById(request.params.id);
-    const latestReading = stationAnalytics.getLatestReading(station);
-    const latestTemp = stationAnalytics.getLatestTemp(station);
-    const latestWindSpeed = stationAnalytics.getLatestWindSpeed(station);
-    const latestWindDirection = stationAnalytics.getLatestWindDirection(station);
     const viewData = {
       station: "Station",
       station: station,
-      latestReading: latestReading,
-      fahrenheit: conversions.tempConversion(latestTemp),
-      beafourt: conversions.beafourt(latestWindSpeed),
-      windChill: stationAnalytics.getWindChill(latestTemp, latestWindSpeed),
-      windCompass: conversions.degreesToCompass(latestWindDirection),
     };
     response.render("station-view", viewData);
   },
