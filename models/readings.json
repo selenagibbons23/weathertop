@@ -18,6 +18,15 @@
       "pressure": 600,
       "_id": "d4699f2c-1a45-4fa0-a364-b4e4f255a80f",
       "stationid": "e3c5cbe5-7767-4dad-ae52-0b22c1e40a13"
+    },
+    {
+      "code": 800,
+      "temp": 30,
+      "windSpeed": 5,
+      "windDirection": 5,
+      "pressure": 5,
+      "_id": "2d0417b5-56ff-4c06-b29a-de40c3015921",
+      "stationid": "e3c5cbe5-7767-4dad-ae52-0b22c1e40a13"
     }
   ]
 }
