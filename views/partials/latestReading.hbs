@@ -1,0 +1,63 @@
+
+<div class="container">
+    <div class="columns">
+
+        <div class="column is-one-fifth">
+            <box class="box">
+                <label class="label">Station</label>
+                <span class="icon is-large">
+              <i class="fa-solid fas fa-2x fa-location-crosshairs"></i>
+              </span>
+                <p>{{station.name}}</p>
+                <p>Latitude: {{station.lat}}</p>
+                <p>Longitude: {{station.lng}}</p>
+            </box>
+        </div>
+
+        <div class="column is-one-fifth">
+            <box class="box">
+                <label class="label">Weather</label>
+                <span class="icon is-large">
+              <i class="fa-solid fas fa-2x fa-cloud-sun"></i>
+          </span>
+                <p>{{latestReading.code}}</p>
+            </box>
+        </div>
+
+        <div class="column is-one-fifth">
+
+            <box class="box">
+                <label class="label">Temperature</label>
+                <span class="icon is-large">
+              <i class="fa-solid fas fa-2x fa-temperature-three-quarters"></i>
+          </span>
+                <p>{{latestReading.temperature}} °C</p>
+                <p>{{fahrenheit}}°F</p>
+            </box>
+        </div>
+
+        <div class="column is-one-fifth">
+            <box class="box">
+                <label class="label">Wind</label>
+                <span class="icon is-large">
+              <i class="fa-solid fas fa-2x fa-wind"></i>
+          </span>
+                <p>{{latestReading.windSpeed}}</p>
+                <p>{{beafourt}} Bft</p>
+                <p>{{windCompass}}</p>
+                <p>Feels like {{windChill}}</p>
+            </box>
+        </div>
+
+        <div class="column is-one-fifth">
+            <box class="box">
+                <label class="label">Pressure</label>
+                <span class="icon is-large">
+              <i class="fa-solid fas fa-2x fa-water"></i>
+          </span>
+          <p>{{latestReading.pressure}}</p>
+            </box>
+        </div>
+
+    </div>
+</div>
